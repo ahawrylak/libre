@@ -5,8 +5,15 @@
 /* variables and mixins */
 
 
-
 /* LAYOUT */
+
+.alert {
+  text-align: center;
+}
+
+.alert-notice {
+  background-color: #82d16c;
+}
 
 
 
@@ -24,7 +31,6 @@
 .nav .searchbox {
   margin-top: 8px;
 }
-
 
 
 /* footer */
