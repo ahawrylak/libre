@@ -1,28 +1,14 @@
-<div class="jumbotron text-center">
-  <h1>Welcome to Libre!</h1>
-  <p>Resize this responsive page to see the effect!</p>
-</div>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-3">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-3">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-3">
-      <h3>Column 3</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-3">
-      <h3>Column 4</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
+  <div class="jumbotron text-center">
+    <h1>Welcome to <spand class="logo">Libre!</span></h1>
+    <p>Here you can borrow, rate and review books!</p>
+    <%= render 'layouts/searchbox' %>
+  </div>
+  <div class="jumbotron text-center">
+    <h3>Wanna full Libre experience?</h3>
+    <%= link_to 'Sign Up', '#', class: 'btn btn-primary' %>
+    <span>or</span>
+    <%= link_to 'Log In', '#', class: 'btn btn-primary' %>
+    <span>if you already have an account</span>
   </div>
 </div>
