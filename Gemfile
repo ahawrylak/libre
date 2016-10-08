@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'sqlite3'
+
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -27,6 +27,7 @@ gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'sqlite3'
 end
 
 group :development do
@@ -40,6 +41,10 @@ end
 
 group :test do
   gem 'minitest-reporters',       '1.1.9'
+end
+
+group :production do
+  gem 'pg', '~> 0.19.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
