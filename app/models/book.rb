@@ -1,5 +1,4 @@
 class Book < ApplicationRecord
-
   before_validation :default_values
 
   validates :author, presence: true,

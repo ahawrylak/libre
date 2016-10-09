@@ -1,0 +1,7 @@
+book1:
+  author: Andrzej Sapkowski
+  title: Guards! Guards!
+  pub_year: 1989
+  description: No description
+  created_at: <%= 5.days.ago %>
+  updated_at: <%= 4.days.ago %>
