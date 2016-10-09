@@ -56,6 +56,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should delete book when signed in' do
+    sign_in @user
     assert_difference "Book.count", -1 do
       delete book_url(@book)
     end

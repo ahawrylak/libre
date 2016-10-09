@@ -1,2 +1,34 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+
+    <h2>New book</h2>
+
+    <%= form_for(@book) do |f| %>
+
+      <div class="field">
+        <%= f.label :author %><br />
+        <%= f.text_field :author, autofocus: true, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="field">
+        <%= f.label :pub_year, 'Publication year' %><br />
+        <%= f.select :pub_year, 1700..2020, class: 'form-control', prompt: "Choose year" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description %><br />
+        <%= f.text_area :description,
+                        placeholder: "Say a few words about this book without spoilers", class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Submit", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

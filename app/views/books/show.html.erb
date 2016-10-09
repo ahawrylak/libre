@@ -1,2 +1,14 @@
 <h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<% if @book %>
+  <%= @book.author %><br />
+  <%= @book.title %><br />
+  <%= @book.pub_year %><br />
+  <%= @book.description %><br />
+  <%= @book.created_at %><br />
+  <%= @book.updated_at %><br />
+
+<%= link_to 'delete', book_url(@book), method: :delete, data: { confirm: "Are you sure?" } %>
+
+<% else %>
+  no such book
+<% end %>
