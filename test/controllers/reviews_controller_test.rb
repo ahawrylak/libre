@@ -4,7 +4,7 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
 
 
   test 'should redirect new when not signed in' do
-    get reviews_new_url
+    get new_review_url
     assert_redirected_to new_user_session_url
   end
 
@@ -38,5 +38,15 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
     assert_not flash[:alert].empty?
   end
 
+  test 'should allow user to delete his review' do
+    review = reviews(:review1)
+    user = review.user
+    sign_in user
+    assert_difference "Review.count", -1 do
+      delete review_url(review)
+    end
+  end
+
+  
 
 end
