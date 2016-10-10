@@ -1,5 +1,6 @@
 class Book < ApplicationRecord
   before_validation :default_values
+  has_many :reviews
 
   validates :author, presence: true,
                      length: { maximum: 69 }
