@@ -1,7 +1,8 @@
-<%= book.id %><br />
-<%= book.author %><br />
-<%= book.title %><br />
-<%= book.pub_year %><br />
-<%= book.description %><br />
-<%= book.created_at %><br />
-<%= book.updated_at %><br /><br />
+ID: <%= book.id %><br />
+AUTHOR: <%= book.author %><br />
+TITLE: <%= book.title %><br />
+PUBLICATION YEAR: <%= book.pub_year %><br />
+DESCRIPTION: <%= book.description %><br />
+CREATED AT: <%= book.created_at %><br />
+UPDATED AT: <%= book.updated_at %><br />
+LINK TO BOOK: <%= link_to 'click', book_url(book) %><br /><br />
