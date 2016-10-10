@@ -1,0 +1,9 @@
+user: <%= review.user.email %><br />
+review of: <%= review.book.title %><br />
+created at: <%= review.created_at %><br />
+content <%= review.content %><br />
+<% if user_signed_in? && review.user == current_user%>
+  <%= link_to 'delete review', review_url(review), method: :delete,
+                                                   data: { confirm: "Are you sure?" } %>
+<% end %>
+<br /><br />

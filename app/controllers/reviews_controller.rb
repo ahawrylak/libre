@@ -2,12 +2,19 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:destroy]
 
-  def new
-    @review = Review.new
-  end
+   def new
+     @review = Review.new
+   end
 
   def create
-    
+    review = Book.find(params[:book_id]).reviews.build(review_params)
+    review.user_id = current_user.id
+    if review.save
+      flash[:notice] = "Your review has been successfully added"
+    else
+      flash[:alert] = "Couldn't add review"
+    end
+    redirect_to :back
   end
 
   def destroy
@@ -18,6 +25,10 @@ class ReviewsController < ApplicationController
   end
 
 private
+
+    def review_params
+      params.require(:review).permit(:content)
+    end
 
     def correct_user
       review = Review.find(params[:id])
