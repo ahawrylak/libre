@@ -6,8 +6,6 @@
         <span><%= @book.author %></span>
         <span><%= @book.title %></span>
         <span><%= @book.pub_year %></span>
-        <span><%= @book.created_at %></span>
-        <span><%= @book.updated_at %></span>
       </div>
     </div>
     <div class="col-md-8">
@@ -29,8 +27,12 @@
 
       <div class="jumbotron book-reviews">
         <h2>Reviews</h2>
-        <% @book.reviews.order('created_at DESC').each do |review| %>
-          <%= render review %>
+        <% if @book.reviews.any? %>
+          <% @book.reviews.order('created_at DESC').each do |review| %>
+            <%= render review %>
+          <% end %>
+        <% else %>
+          <h4>Nobody reviewed this book yet. Be first!</h4>
         <% end %>
       </div>
    </div>
