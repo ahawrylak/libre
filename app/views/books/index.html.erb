@@ -1,7 +1,15 @@
-<h1>Books#index</h1>
-<% if user_signed_in? %>
-  <%= link_to 'new book', new_book_url %><br /><br />
-<% end %>
-<% @books.each do |book| %>
-  <%= render book %>
-<% end %>
+
+
+<div class="container">
+  <div class="jumbotron text-center">
+    <h3>All books</h3>
+    <% if user_signed_in? %>
+      <%= link_to 'new book', new_book_url, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+  <div class="row">
+    <% @books.each do |book| %>
+      <%= render book %>
+    <% end %>
+  </div>
+</div>

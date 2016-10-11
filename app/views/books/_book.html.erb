@@ -1,8 +1,16 @@
-ID: <%= book.id %><br />
-AUTHOR: <%= book.author %><br />
-TITLE: <%= book.title %><br />
-PUBLICATION YEAR: <%= book.pub_year %><br />
-DESCRIPTION: <%= book.description %><br />
-CREATED AT: <%= book.created_at %><br />
-UPDATED AT: <%= book.updated_at %><br />
-LINK TO BOOK: <%= link_to 'click', book_url(book) %><br /><br />
+<!-- ID: <%= book.id %><br /> -->
+
+<!-- CREATED AT: <%= book.created_at %><br />
+UPDATED AT: <%= book.updated_at %><br /> -->
+
+
+<div class="col-md-3">
+  <div class="jumbotron text-center">
+    <div class="single-book">
+      <h3><%= book.title %></h3>
+      <span><%= book.author %></span>
+      <span><%= book.pub_year %></span>
+      <span><%= link_to 'more', book_url(book) %></span>
+    </div>
+  </div>
+</div>
