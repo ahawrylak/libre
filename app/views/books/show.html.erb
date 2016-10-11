@@ -1,24 +1,37 @@
-<h1>Books#show</h1>
-<% if @book %>
-  <%= @book.author %><br />
-  <%= @book.title %><br />
-  <%= @book.pub_year %><br />
-  <%= @book.description %><br />
-  <%= @book.created_at %><br />
-  <%= @book.updated_at %><br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="book-info jumbotron">
+        <h3>Info</h3>
+        <span><%= @book.author %></span>
+        <span><%= @book.title %></span>
+        <span><%= @book.pub_year %></span>
+        <span><%= @book.created_at %></span>
+        <span><%= @book.updated_at %></span>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <% if user_signed_in? %>
+        <%= link_to 'delete', book_url(@book), method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to 'edit', edit_book_url(@book) %>
+      <% end %>
 
-  <% if user_signed_in? %>
-  <%= link_to 'delete', book_url(@book), method: :delete, data: { confirm: "Are you sure?" } %><br />
-  <%= link_to 'edit', edit_book_url(@book) %><br />
-  <%= render 'reviews/review_form' %>
-  <% end %>
+      <div class="jumbotron book-description">
+        <h2>Description</h2>
+        <span><%= @book.description %></span>
+      </div>
 
-  <br /><br />
-  <h2>Reviews</h2>
-  <% @book.reviews.each do |review| %>
-    <%= render review %>
-  <% end %>
+      <div class="review-form">
+      <% if user_signed_in? %>
+        <%= render 'reviews/review_form' %>
+      <% end %>
+      </div>
 
-<% else %>
-  no such book
-<% end %>
+      <div class="jumbotron book-reviews">
+        <h2>Reviews</h2>
+        <% @book.reviews.order('created_at DESC').each do |review| %>
+          <%= render review %>
+        <% end %>
+      </div>
+   </div>
+</div>

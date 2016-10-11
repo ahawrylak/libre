@@ -1,9 +1,17 @@
-user: <%= review.user.email %><br />
-review of: <%= review.book.title %><br />
-created at: <%= review.created_at %><br />
-content <%= review.content %><br />
-<% if user_signed_in? && review.user == current_user%>
-  <%= link_to 'delete review', review_url(review), method: :delete,
-                                                   data: { confirm: "Are you sure?" } %>
-<% end %>
-<br /><br />
+<div class="container">
+  <div class="jumbotron book-review">
+    <div class="review-info text-right small">
+      posted <%= convert_time review.created_at %>
+      by <strong><%= review.user.email %></strong>
+    </div>
+    <div class="review-content lead">
+      content <%= review.content %>
+    </div>
+    <% if user_signed_in? && review.user == current_user%>
+      <div class="review-delete">
+          <%= link_to 'delete review', review_url(review), method: :delete,
+                                                           data: { confirm: "Are you sure?" } %>
+      </div>
+    <% end %>
+  </div>
+</div>

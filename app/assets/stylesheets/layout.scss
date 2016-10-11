@@ -4,11 +4,11 @@
 
 /* variables and mixins */
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
+// @mixin box_sizing {
+//   -moz-box-sizing:    border-box;
+//   -webkit-box-sizing: border-box;
+//   box-sizing:         border-box;
+// }
 
 /* LAYOUT */
 
@@ -39,6 +39,7 @@
 
 .nav .searchbox {
   margin-top: 8px;
+  margin-right: 10px;
 }
 
 
@@ -90,5 +91,29 @@ input[type="checkbox"] {
   margin-bottom: 10px;
   span {
     font-weight: normal;
+  }
+}
+
+/* other */
+.book-info {
+  width: 100%;
+  span {
+    display: block;
+  }
+}
+
+.review-form {
+  padding-bottom: 40px;
+}
+
+.book-review {
+  background-color: #e0e0e0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  span {
+    display: block;
+  }
+  .review-info {
+    margin-bottom: 5px;
   }
 }
