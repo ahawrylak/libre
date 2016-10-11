@@ -1,4 +1,4 @@
-    <h3>Write your review of <%= @book.title %></h3>
+    <h3>Write your review of <em><%= shorten(@book.title) %></em></h3>
 
     <%= form_for(@review) do |f| %>
       <div>

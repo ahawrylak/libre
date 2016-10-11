@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-md-4">
       <div class="book-info jumbotron">
-        <h3>Info</h3>
+        <h2>Info</h2>
+        <span class="lead"><em><%= @book.title %></em></span>
         <span><%= @book.author %></span>
-        <span><%= @book.title %></span>
-        <span><%= @book.pub_year %></span>
+        <span>Published in <%= @book.pub_year %></span>
       </div>
     </div>
     <div class="col-md-8">
