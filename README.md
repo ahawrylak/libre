@@ -1,24 +1,36 @@
-# README
+# About
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Libre is simple app developed in Rails 5 for educational purposes.
 
-Things you may want to cover:
 
-* Ruby version
+# Getting started
 
-* System dependencies
+If you want to run Libre on your local machine, make sure you have correctly installed Rails and then run following commands:
 
-* Configuration
+```
+$ git clone https://github.com/ahawrylak/libre.git
+```
 
-* Database creation
+```
+$ bundle install --without production
+```
 
-* Database initialization
+```
+$ rails db:migrate
+```
 
-* How to run the test suite
+```
+$ rails test
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+If the test suite passes, you'll be able to run the app in local server (localhost:3000 by default)
 
-* Deployment instructions
+```
+$ rails server
+```
 
-* ...
+# Help
+If you have any problems or suggestions about Libre, feel free to contact me by email
+adrian.hawrylak@gmail.com
+
+
