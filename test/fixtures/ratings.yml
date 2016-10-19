@@ -1,11 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+rating1:
+  value: 3
+  user: user1
+  book: book1
 
-one:
-  value: 1
-  user: one
-  book: one
-
-two:
-  value: 1
-  user: two
-  book: two
+rating2:
+  value: 5
+  user: user2
+  book: book1
