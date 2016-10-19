@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   before_validation :default_values
   has_many :reviews
+  has_many :ratings, dependent: :destroy
 
   validates :author, presence: true,
                      length: { maximum: 69 }
