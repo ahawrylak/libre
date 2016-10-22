@@ -47,6 +47,6 @@ class ReviewsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  
+
 
 end

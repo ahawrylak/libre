@@ -21,7 +21,11 @@ class ActionDispatch::IntegrationTest
     post user_session_path, params: { user: { email: user.email,
                                          password: password,
                                          remember_me: remember_me } }
-                                      
+
+  end
+
+  def is_signed_in?
+    !session[:user_id].nil?
   end
 
 end
