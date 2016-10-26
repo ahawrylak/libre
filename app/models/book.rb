@@ -15,6 +15,11 @@ class Book < ApplicationRecord
   validates :description, length: { maximum: 1999 }
 
 
+  def self.search(search)
+    self.where("title LIKE ? OR author LIKE ? OR description LIKE ?",
+                "%#{search}%", "%#{search}%", "%#{search}%")
+  end
+
   private
 
     def default_values

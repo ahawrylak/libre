@@ -7,9 +7,17 @@
       <%= link_to 'new book', new_book_url, class: 'btn btn-primary' %>
     <% end %>
   </div>
-  <div class="row">
-    <% @books.each do |book| %>
-      <%= render book %>
-    <% end %>
-  </div>
+
+  <% if @books.any? %>
+    <div class="row">
+      <% @books.each do |book| %>
+        <%= render book %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="jumbotron text-center">
+      <h3>No results found</h3>
+    </div>
+  <% end %>
+
 </div>
