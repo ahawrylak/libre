@@ -1,0 +1,21 @@
+<% if current_user_has_voted?(@book) %>
+  You rated: <%= current_user_rate(@book).value %>
+  (<%= link_to 'change', rating_path(current_user_rate(@book)),
+                         method: :delete, data: { confirm: 'Are you sure?' }%>)
+
+<% else %>
+
+  <%= form_for(@rating) do |f| %>
+    <div>
+      <%= f.hidden_field :book_id, value: @book.id %>
+    </div>
+
+    <div class="field">
+      <%= f.number_field(:value, in: 1..5, step: 1, placeholder: "Your rating") %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Rate this book!", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+<% end %>

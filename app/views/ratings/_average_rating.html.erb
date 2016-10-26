@@ -1,0 +1,6 @@
+Average rating:
+<% if @book.ratings.any? %>
+  <%= number_with_precision average_rating(@book), precision: 2 %>
+<% else %>
+  No rates yet!
+<% end %>

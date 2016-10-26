@@ -1,6 +1,8 @@
 class Book < ApplicationRecord
   before_validation :default_values
   has_many :reviews
+  has_many :ratings, dependent: :destroy
+  has_many :rated_users, through: :ratings, source: :user
 
   validates :author, presence: true,
                      length: { maximum: 69 }
@@ -11,7 +13,6 @@ class Book < ApplicationRecord
                                        greater_than_or_equal_to: 0,
                                        less_than_or_equal_to: 2020 }
   validates :description, length: { maximum: 1999 }
-
 
 
   private

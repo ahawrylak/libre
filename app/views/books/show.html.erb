@@ -6,6 +6,14 @@
         <span class="lead"><em><%= @book.title %></em></span>
         <span><%= @book.author %></span>
         <span>Published in <%= @book.pub_year %></span>
+        <% if user_signed_in? %>
+          <div class="rating-form">
+            <%= render 'ratings/rating_form' %>
+          </div>
+        <% end %>
+        <div class="book-rating">
+          <%= render 'ratings/average_rating' %>
+        </div>
       </div>
     </div>
     <div class="col-md-8">
@@ -13,6 +21,8 @@
         <%= link_to 'delete', book_url(@book), method: :delete, data: { confirm: "Are you sure?" } %>
         <%= link_to 'edit', edit_book_url(@book) %>
       <% end %>
+
+
 
       <div class="jumbotron book-description">
         <h2>Description</h2>

@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :reviews
+  has_many :ratings, dependent: :destroy
+  has_many :rated_books, through: :ratings, source: :book
 end

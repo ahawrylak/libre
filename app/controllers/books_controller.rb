@@ -43,7 +43,9 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find_by(id: params[:id])
+    redirect_to books_path unless @book
     @review = Review.new(book: @book) # to use in review_form
+    @rating = Rating.new(book: @book) # to use in rating_form
   end
 
   private

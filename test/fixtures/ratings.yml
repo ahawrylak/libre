@@ -1,0 +1,9 @@
+rating1:
+  value: 3
+  user: user1
+  book: book1
+
+rating2:
+  value: 5
+  user: user2
+  book: book1
