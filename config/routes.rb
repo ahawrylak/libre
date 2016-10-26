@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :books
   resources :reviews, only: [:new, :create, :destroy]
-  resources :ratings, only: [:create, :update]
+  resources :ratings, only: [:create, :destroy]
 
 end
