@@ -23,7 +23,11 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    if query = params[:search]
+      @books = Book.search(query)
+    else
+      @books = Book.all
+    end
   end
 
   def edit

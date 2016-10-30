@@ -15,6 +15,16 @@ class Book < ApplicationRecord
   validates :description, length: { maximum: 1999 }
 
 
+  def self.search(search)
+    if Rails.env.production?
+      where("title @@ :q or author @@ :q or description @@ :q", q: search)
+    else
+      where("title LIKE ? OR author LIKE ? OR description LIKE ?",
+                  "%#{search}%", "%#{search}%", "%#{search}%")
+
+    end
+  end
+
   private
 
     def default_values
