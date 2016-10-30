@@ -16,8 +16,13 @@ class Book < ApplicationRecord
 
 
   def self.search(search)
-    self.where("title LIKE ? OR author LIKE ? OR description LIKE ?",
-                "%#{search}%", "%#{search}%", "%#{search}%")
+    if Rails.env.production?
+      where("title @@ :q or author @@ :q or description @@ :q", q: search)
+    else
+      where("title LIKE ? OR author LIKE ? OR description LIKE ?",
+                  "%#{search}%", "%#{search}%", "%#{search}%")
+
+    end
   end
 
   private
