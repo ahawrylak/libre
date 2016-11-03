@@ -5,7 +5,7 @@
       by <strong><%= review.user.email %></strong>
     </div>
     <div class="review-content lead">
-      content <%= review.content %>
+      <%= review.content %>
     </div>
     <% if user_signed_in? && review.user == current_user%>
       <div class="review-delete">
